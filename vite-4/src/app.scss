@@ -1,83 +1,215 @@
-/* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */
+/* Write your global styles here, in SCSS syntax. Variables and mixins from the src/variables.scss file are available here without importing */ /* Import only what you need from Bootstrap */
+
+@import "../scss/root";
+
+@import "../scss/reboot";
+
+@import "../scss/type";
+
+@import "../scss/images";
+
+@import "../scss/containers";
+
+@import "../scss/grid";
+
+@import "../scss/tables";
+
+@import "../scss/forms";
+
+@import "../scss/buttons";
+
+@import "../scss/transitions";
+
+@import "../scss/dropdown";
+
+@import "../scss/button-group";
+
+@import "../scss/nav";
+
+@import "../scss/navbar";
+
+@import "../scss/card";
+
+@import "../scss/accordion";
+
+@import "../scss/breadcrumb";
+
+@import "../scss/pagination";
+
+@import "../scss/badge";
+
+@import "../scss/alert";
+
+@import "../scss/progress";
+
+@import "../scss/list-group";
+
+@import "../scss/close";
+
+@import "../scss/toasts";
+
+@import "../scss/modal";
+
+@import "../scss/tooltip";
+
+@import "../scss/popover";
+
+@import "../scss/carousel";
+
+@import "../scss/spinners";
+
+@import "../scss/offcanvas";
+
+@import "../scss/placeholders";
+
+@import "../scss/helpers";
+
+@import "../scss/utilities/api";
+
+$appbar-height: 48px;
 
 :root {
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+  --app-bar-height: $appbar-height;
+  --text-decoration: none;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
+/* Grid */
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
 
-.card {
-  padding: 2em;
-}
+
+
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+/* Footer */
+#app > footer {
+  padding: 1rem 0;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
+#app > main {
+  flex: 1;
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;  
+  margin-top: $appbar-height;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+
+label.form-switch {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  color: var(--bs-gray-800);
+}
+
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.carousel img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.carousel,
+.carousel-inner,
+.carousel-item {
+  height: 100%;
+}
+
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+.image-fit {
+  object-fit: contain;
+  object-position: center center;
+}
+
+.btn.btn-block {
+  display: block;
+  width: 100%;
+}
+$smol-size: 200px;
+$smol-gap: 1rem;
+
+.smol-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $smol-gap;
+  justify-content: center;
+  padding: $smol-gap;
+}
+
+.smol-grid > * {
+  display: flex;
+  flex-direction: column;
+  width: $smol-size;
+  max-width: calc($smol-size + 5%);
+  height: $smol-size;
+}
+.smol-grid img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.smol-grid figure {
+  margin-bottom: 0;
+}
+.smol-grid .caption {
+  display: block;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
 }
