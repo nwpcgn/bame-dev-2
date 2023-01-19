@@ -1,5 +1,5 @@
 <script>
-  import GoodBoi from "./GoodBoi.svelte";
+  import GoodBoi from "../lib/pico/GoodBoi.svelte";
   export let titel = "Titel";
   export let sub;
   export let bg;

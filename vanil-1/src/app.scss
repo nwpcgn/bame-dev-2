@@ -18,7 +18,16 @@
 // }
 
 // Import Pico
-@import "../scss/pico";
+
+$primary-500: #e91e63;
+$primary-600: #d81b60;
+$primary-700: #c2185b;
+
+$appbar-height: 52px;
+
+@import "./scss/pico";
+
+
 
 :root {
   --app-bar-height: $appbar-height;
@@ -121,7 +130,22 @@ summary[role="link"].secondary:is([aria-current], :hover, :active, :focus) {
   padding: 0;  
   margin-top: $appbar-height;
 }
-
+.page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--background-color);
+  color: var(--color);
+}
+.page > section {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: var(--spacing);
+  padding-left: var(--spacing);
+}
 
 
 
@@ -152,4 +176,28 @@ ul.list a {
   padding: var(--form-element-spacing-vertical) var(--form-element-spacing-horizontal);
   text-decoration: none;
  /*  box-shadow: var(--card-box-shadow); */
+}
+
+.media {
+  --typography-spacing-vertical: 0.25rem;
+}
+.media {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+}
+.media > div {
+  flex: 1;
+}
+.media > aside {
+  margin: 0;
+}
+.media img {
+  max-width: 100%;
+  max-height: 100px;
+}
+.media {
+  h1, h4, p {
+    --typography-spacing-vertical: 0.25rem;
+  }
 }

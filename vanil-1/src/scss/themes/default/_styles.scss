@@ -6,7 +6,7 @@
     "Segoe UI Symbol", "Noto Color Emoji";
   --line-height: 1.5;
   --font-weight: 400;
-  --font-size: 17px;
+  --font-size: 16px;
 
   // Responsive typography
   @if $enable-responsive-typography {
@@ -41,14 +41,13 @@
   --outline-width: 3px;
 
   // Spacings
-   --spacing: 1rem;
-  // --spacing: 0.75rem;
+  --spacing: 1rem;
 
   // Spacings for typography elements
-  // --typography-spacing-vertical: 1.25rem;
   --typography-spacing-vertical: 1.5rem;
+
   // Spacings for body > header, body > main, body > footer, section, article
-  --block-spacing-vertical: calc(var(--spacing) * 1.5);
+  --block-spacing-vertical: calc(var(--spacing) * 2);
   --block-spacing-horizontal: var(--spacing);
 
   @if ($enable-classes and $enable-grid) {
@@ -61,10 +60,8 @@
   --form-element-spacing-horizontal: 1rem;
 
   // Spacings for nav component
- // --nav-element-spacing-vertical: 1rem;
- --nav-element-spacing-vertical: 0.75rem;
+  --nav-element-spacing-vertical: 1rem;
   --nav-element-spacing-horizontal: 0.5rem;
-
   --nav-link-spacing-vertical: 0.5rem;
   --nav-link-spacing-horizontal: 0.5rem;
 
@@ -167,7 +164,7 @@ a {
   @if $enable-classes {
     &.secondary,
     &.contrast {
-      --text-decoration: none;
+      --text-decoration: underline;
     }
   }
 }
@@ -188,31 +185,26 @@ h6 {
 }
 
 h1 {
-  --font-size: 2.25rem;
-  --typography-spacing-vertical: 2.874rem;
-}
-
-h2 {
   --font-size: 2rem;
   --typography-spacing-vertical: 3rem;
 }
 
-h3 {
+h2 {
   --font-size: 1.75rem;
   --typography-spacing-vertical: 2.625rem;
 }
 
-h4 {
+h3 {
   --font-size: 1.5rem;
   --typography-spacing-vertical: 2.25rem;
 }
 
-h5 {
+h4 {
   --font-size: 1.25rem;
   --typography-spacing-vertical: 1.874rem;
 }
 
-h6 {
+h5 {
   --font-size: 1.125rem;
   --typography-spacing-vertical: 1.6875rem;
 }
